@@ -3,9 +3,5 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <meta-data
-        android:name="com.zc.base.glideutil.UnsafeOkHttpGlideModule"
-        android:value="GlideModule" />
-
 </manifest>
 
