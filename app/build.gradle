@@ -1,27 +1,137 @@
 apply plugin: 'com.android.application'
 
 android {
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    signingConfigs {
+        keystore {
+            storeFile file('floruit_seller_keystore.jks')
+            storePassword KEYSTORE_PASSWORD
+            keyAlias 'cxyapp'
+            keyPassword KEY_PASSWORD
+            v2SigningEnabled true
+            v1SigningEnabled true
+        }
+    }
+
     compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
     defaultConfig {
         applicationId "base.zc.com.project"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        multiDexEnabled true
+        flavorDimensions "versionCode"
+
+        def versionCode_ = VERSION_CODE.toString()
+
+        def versionNameFrontTemp = versionCode_.toString();
+        def versionName_ = "";
+        for (int i = 0; i < versionNameFrontTemp.length(); i++) {
+            def symbol = "."
+            if (i == versionNameFrontTemp.length() - 1) {
+                symbol = ""
+            }
+            versionName_ += Character.toString(versionNameFrontTemp.charAt(i)) + symbol
+        }
+
+        defaultConfig {
+            versionCode versionCode_.toInteger()
+            versionName versionName_
+        }
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+//            abiFilters "armeabi", "armeabi-v7a", "x86", 'x86_64', 'armeabi-v8a', 'mips', 'mips64'
+            abiFilters "armeabi", "armeabi-v7a"
+            // 还可以添加 'armeabi', 'armeabi-v8a', x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "1c6cbe51bada8512db29ac72", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+
+//        //GrowingIO  相关
+//        resValue("string", "growingio_project_id", "915616bc65920e31")
+//        resValue("string", "growingio_url_scheme", "growing.d9de71a3a37a10a0")
+
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true // 是否去除无效的资源文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.keystore
+        }
+        debug {
+            minifyEnabled false
+            zipAlignEnabled true
+//            shrinkResources true // 是否去除无效的资源文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.keystore
         }
     }
-    lintOptions {
-        abortOnError false
+
+    productFlavors {
+        floruit_seller {}
     }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+
+            if (variant.buildType.name.equals('release')) {
+                def releaseApkName = variant.productFlavors[0].name + '_' + getCurrentDate() + "_v${defaultConfig.versionName}" + '.apk'
+                def oldFile = output.outputFile
+//                output.outputFile = new File(oldFile.parent, releaseApkName)
+                outputFileName = releaseApkName
+            }
+
+        }
+    }
+
+}
+
+
+def getCurrentDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyy_MM_dd_HH_mm_ss')
+    return formattedDate
+}
+
+/**
+ * 获取build_version (即GIT SHA值)
+ */
+def getBuildVersion() {
+    def buildVersion = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+    return buildVersion
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
-    compile 'com.github.z3638048z:ZcBase:v1.0.1'
+    implementation 'com.android.support:design:+'
+    implementation 'com.lzy.net:okgo:2.1.4'
+    implementation 'com.bigkoo:pickerview:2.1.1'
+    implementation 'com.huxq17.xrefreshview:xrefreshview:+'
+    implementation 'org.greenrobot:eventbus:+'
+    implementation 'com.github.bumptech.glide:glide:+'
+    implementation 'com.github.bumptech.glide:okhttp-integration:1.4.0'
+    implementation 'com.android.support:multidex:1.0.2'
+    implementation 'me.shaohui.advancedluban:library:+'
+    implementation 'cn.jiguang.sdk:jpush:+'
+    implementation 'cn.jiguang.sdk:jcore:+'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "utf-8";
 }
