@@ -83,7 +83,7 @@ android {
     }
 
     productFlavors {
-        floruit_seller {}
+        floruit_base {}
     }
 
     applicationVariants.all { variant ->
