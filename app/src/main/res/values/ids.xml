@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="bottom_message" type="id"/>
+    <item name="loading" type="id"/>
+    <item name="v_margin" type="id"/>
+    <item name="class_bar_ll" type="id"/>
+    <item name="class_bar_bottom" type="id"/>
+    <item type="id" name="group_position"></item>
+    <item type="id" name="child_position"></item>
+    <item type="id" name="custom_view"></item>
+    <item type="id" name="image_id"></item>
+
+    <item type="id" name="red_bag_view"></item>
+    <item type="id" name="sign_view"></item>
+    <item type="id" name="bind_phone_view"></item>
+    <item type="id" name="tip_view"></item>
+    <item type="id" name="rl_header"></item>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--PopupWindow显示动画，从底部进入界面-->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:fromYDelta="100%p"
+        android:toYDelta="0"
+        android:duration="100" />
+    <alpha
+        android:fromAlpha="0"
+        android:toAlpha="1.0"
+        android:duration="100"/>
+</set>

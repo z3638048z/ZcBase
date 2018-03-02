@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.WebActivity">
+    <RelativeLayout
+        android:id="@+id/title_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <include
+            android:id="@+id/header_view"
+            layout="@layout/title"/>
+    </RelativeLayout>
+
+    <base.zc.com.project.util.MyWVJBWebView
+        android:id="@+id/webView"
+        android:layout_below="@id/title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </base.zc.com.project.util.MyWVJBWebView>
+    <base.zc.com.project.view.WebViewProgressBar
+        android:id="@+id/webViewProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/title_rl" />
+</RelativeLayout>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/rl_update"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_update"
+            android:orientation="vertical"
+            android:layout_width="250dp"
+            android:layout_height="350dp"
+            android:background="@mipmap/update_bg"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:src="@mipmap/update_rocket"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/colorWhite"
+                    android:text="软件更新提示"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tv_update_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/colorWhite"
+                    android:text="翠鲜缘V2.1版本上线"
+                    android:textSize="13sp"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/tv_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="19dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorFontGray"
+                    android:text="新增功能 :"/>
+
+                <ScrollView
+                    android:layout_below="@+id/tv_tip"
+                    android:layout_above="@+id/rl_cart_bottom"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ll_update_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="13sp"
+                            android:text="1、新增积分兑换功能"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:textSize="13sp"
+                            android:text="2、新增实时账单功能"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:textSize="13sp"
+                            android:text="3、新增档口自提功能"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:textSize="13sp"
+                            android:text="4、UI优化及性能优化"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:textSize="13sp"
+                            android:text="5、UI优化及性能优化"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:textSize="13sp"
+                            android:text="6、UI优化及性能优化"/>
+
+                    </LinearLayout>
+
+
+                </ScrollView>
+
+                <RelativeLayout
+                    android:id="@+id/rl_cart_bottom"
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="23dp">
+
+                    <FrameLayout
+                        android:id="@+id/fl_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible">
+
+                        <base.zc.com.project.view.ProgressBar
+                            android:id="@+id/pb_download_back"
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"/>
+
+                        <base.zc.com.project.view.ProgressBar
+                            android:id="@+id/pb_download_progress"
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"/>
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tv_download_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/fl_progress"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="正在下载...0%"
+                        android:textSize="13sp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"/>
+
+
+                    <Button
+                        android:id="@+id/btn_update_ok"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/update_btn"
+                        android:text="马上体验"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorWhite"/>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:textColor="@color/colorFontDark"-->
+            <!--android:text="有新的版本更新"/>-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_update_info"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:textColor="@color/colorFontDark"-->
+            <!--android:text="修复bug，优化体验地方地方地方地方地方地方地方地方地方"/>-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<Button-->
+            <!--android:id="@+id/btn_update_ok"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:text="我要升级"/>-->
+
+            <!--<Button-->
+            <!--android:id="@+id/btn_update_cancel"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="稍后再说"/>-->
+
+
+            <!--</LinearLayout>-->
+
+
+            <!--<RelativeLayout-->
+            <!--android:id="@+id/rl_progress"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="20dp">-->
+
+            <!--<base.zc.com.project.view.ProgressBar-->
+            <!--android:id="@+id/pb_download_back"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_centerInParent="true"/>-->
+
+            <!--<base.zc.com.project.view.ProgressBar-->
+            <!--android:id="@+id/pb_download_progress"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_centerInParent="true"/>-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_download_progress"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:textColor="@color/colorFontDark"-->
+            <!--android:gravity="center"-->
+            <!--android:text="0%"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_centerInParent="true"/>-->
+
+
+            <!--</RelativeLayout>-->
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/fl_close"
+            android:layout_alignTop="@+id/ll_update"
+            android:layout_alignRight="@+id/ll_update"
+            android:paddingLeft="25dp"
+            android:paddingTop="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/update_close_icon"/>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

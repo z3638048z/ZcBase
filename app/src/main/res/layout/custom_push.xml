@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="7dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_launcher"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_notify"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/iv_icon"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxEms="13"
+            android:textSize="16sp"
+            android:textColor="@color/colorFontDark"
+            android:text="哈利路亚爱上的撒撒的史蒂芬第三方是否是否"/>
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:textSize="13sp"
+            android:textColor="@color/colorFontGray6"
+            android:text="8000002465465465465464545aa4"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/ll_notify"
+        android:layout_alignTop="@+id/ll_notify"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="6dp"
+        android:textSize="12.5sp"
+        android:text="12:32"
+        android:textColor="@color/colorFontGray6"/>
+
+</RelativeLayout>
