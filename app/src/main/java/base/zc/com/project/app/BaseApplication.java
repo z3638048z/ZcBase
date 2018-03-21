@@ -6,6 +6,9 @@ import android.util.Log;
 import base.zc.com.project.R;
 import base.zc.com.project.util.LogUtil;
 import base.zc.com.project.util.NetUtil;
+
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpHeaders;
 

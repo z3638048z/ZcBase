@@ -302,27 +302,27 @@ public class MainActivity extends BaseActivity {
 
         getIntent().putExtra("tab", -1);
 
-        if(!SystemUtil.isNotificationEnabled(mContext)){
-            UiUtil.showButtonMessage(mContext, "提示",
-                    "您的系统通知权限已关闭,是否需要打开系统通知权限以便您接收到来自"+getString(R.string.app_name)+"的信息?",
-                    null,new int[]{1,1}, new String[]{"取消", "确定"},
-                    new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                        }
-                    },
-                    new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent();
-                            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                            Uri uri = Uri.fromParts("package", getPackageName(), null);
-                            intent.setData(uri);
-                            startActivity(intent);
-                        }
-                    }
-            );
-        }
+//        if(!SystemUtil.isNotificationEnabled(mContext)){
+//            UiUtil.showButtonMessage(mContext, "提示",
+//                    "您的系统通知权限已关闭,是否需要打开系统通知权限以便您接收到来自"+getString(R.string.app_name)+"的信息?",
+//                    null,new int[]{1,1}, new String[]{"取消", "确定"},
+//                    new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                        }
+//                    },
+//                    new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            Intent intent = new Intent();
+//                            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+//                            Uri uri = Uri.fromParts("package", getPackageName(), null);
+//                            intent.setData(uri);
+//                            startActivity(intent);
+//                        }
+//                    }
+//            );
+//        }
 
     }
 
