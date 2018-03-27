@@ -23,7 +23,7 @@ public class FloruitAppGlideModule extends AppGlideModule {
         builder.setDefaultRequestOptions(
                 new RequestOptions()
                         .format(DecodeFormat.PREFER_ARGB_8888)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .diskCacheStrategy(DiskCacheStrategy.DATA)
                         .skipMemoryCache(false)
         );
 //        builder.setDefaultTransitionOptions(Drawable.class, DrawableTransitionOptions.withCrossFade());

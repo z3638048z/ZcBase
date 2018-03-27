@@ -39,6 +39,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.DisplayMetrics;
+import android.util.LruCache;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -1503,6 +1504,20 @@ public class UiUtil {
         void close(int softKeyboardHeightBeforeClose);
         void before();
         void after();
+    }
+
+    public static LruCache getBitmapLruCache(){
+
+        int maxMemory = (int) (Runtime.getRuntime().totalMemory() / 1024);
+        int cacheSize = maxMemory / 8;
+
+        return new LruCache<Object, Bitmap>(cacheSize){
+
+            @Override
+            protected int sizeOf(Object key, Bitmap value) {
+                return value.getRowBytes() * value.getHeight() / 1024;
+            }
+        };
     }
 
 }
