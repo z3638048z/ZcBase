@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import base.zc.com.project.R;
 import base.zc.com.project.fragment.MyGoodsFragment;
+import base.zc.com.project.fragment.TestFragment;
 import base.zc.com.project.util.CartUtil;
 import base.zc.com.project.util.NetStringCallback;
 import base.zc.com.project.util.NetUtil;
@@ -41,7 +42,7 @@ public class MainActivity extends BaseActivity {
     public TextView tv_menu;
     private View iv_add_goods;
     private MyGoodsFragment pickingDetailFragment;
-    private MyGoodsFragment statementsDetailFragment;
+    private TestFragment statementsDetailFragment;
     private MyGoodsFragment personFragment;
     private MyGoodsFragment refundFragment;
 
@@ -117,7 +118,7 @@ public class MainActivity extends BaseActivity {
         fragmentManager = getSupportFragmentManager();
         myGoodsFragment = new MyGoodsFragment();
         pickingDetailFragment = new MyGoodsFragment();
-        statementsDetailFragment = new MyGoodsFragment();
+        statementsDetailFragment = new TestFragment();
         personFragment = new MyGoodsFragment();
         refundFragment = new MyGoodsFragment();
         fragmentManager.beginTransaction().add(R.id.container_fragment_fl, personFragment).hide(personFragment).commitAllowingStateLoss();
