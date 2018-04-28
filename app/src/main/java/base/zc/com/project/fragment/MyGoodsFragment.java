@@ -27,7 +27,6 @@ public class MyGoodsFragment extends Fragment implements View.OnClickListener {
     //    private ImageView iv_main;
 //    private Button btn_click;
     public MyGoodsFragment() {
-        Log.e("MyGoodsFragment", "MyGoodsFragment.MyGoodsFragment");
     }
 
     @Override
