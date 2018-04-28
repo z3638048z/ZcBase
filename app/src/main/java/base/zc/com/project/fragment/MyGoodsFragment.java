@@ -4,6 +4,7 @@ package base.zc.com.project.fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ public class MyGoodsFragment extends Fragment implements View.OnClickListener {
     //    private ImageView iv_main;
 //    private Button btn_click;
     public MyGoodsFragment() {
+        Log.e("MyGoodsFragment", "MyGoodsFragment.MyGoodsFragment");
     }
 
     @Override
