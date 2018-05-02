@@ -117,7 +117,7 @@ def getBuildVersion() {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:design:27.0.2'
     implementation 'com.lzy.net:okgo:2.1.4'
     implementation 'com.bigkoo:pickerview:2.1.1'
@@ -125,12 +125,13 @@ dependencies {
     implementation 'org.greenrobot:eventbus:+'
     implementation 'com.github.bumptech.glide:glide:4.6.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
-//    implementation 'com.github.bumptech.glide:okhttp-integration:+'
+    //    implementation 'com.github.bumptech.glide:okhttp-integration:+'
     implementation 'jp.wasabeef:glide-transformations:3.0.1'
     implementation 'com.android.support:multidex:1.0.2'
     implementation 'me.shaohui.advancedluban:library:+'
     implementation 'cn.jiguang.sdk:jpush:+'
     implementation 'cn.jiguang.sdk:jcore:+'
+    implementation project(':zc-base')
 }
 
 tasks.withType(JavaCompile) {

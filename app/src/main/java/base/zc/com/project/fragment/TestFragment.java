@@ -88,8 +88,6 @@ public class TestFragment extends Fragment implements View.OnClickListener {
         mAdapter.updateData(dataList);
         rv_main.setAdapter(mAdapter);
 
-
-
         ItemTouchHelper.Callback mCallback = new ItemTouchHelper.SimpleCallback(
                 ItemTouchHelper.UP|ItemTouchHelper.DOWN|ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT, 0) {
             /**
