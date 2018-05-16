@@ -145,6 +145,12 @@
 
         <!-- 极光推送相关结束 -->
 
+
+        <meta-data
+            android:name="MMC_CHANNEL"
+            android:value="${MMC_CHANNEL_VALUE}" />
+
+
     </application>
 
 </manifest>

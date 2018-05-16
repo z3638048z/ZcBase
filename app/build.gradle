@@ -84,6 +84,9 @@ android {
 
     productFlavors {
         floruit_base {}
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [MMC_CHANNEL_VALUE: name]
+        }
     }
 
     applicationVariants.all { variant ->
@@ -96,7 +99,14 @@ android {
                 outputFileName = releaseApkName
             }
 
-            outputFileName = (is_jenkins ? "yes_" : "no_") + str + "_" + choice + ".apk";
+//            if("全部渠道".equals(productFlavors)){
+//                def channel_name = variant.productFlavors[0].name
+//            }
+//
+//            for (int i = 0; i < variant.productFlavors.size(); i++) {
+//
+//            }
+            outputFileName = (is_jenkins ? "yes_" : "no_") + str + "_" + choice + "_" + variant.productFlavors[0].name + ".apk";
 
 
         }
