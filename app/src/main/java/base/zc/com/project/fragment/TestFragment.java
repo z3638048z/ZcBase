@@ -97,7 +97,7 @@ public class TestFragment extends Fragment implements View.OnClickListener {
              * @return
              */
             @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder , RecyclerView.ViewHolder target) {
                 Log.e("TestFragment", "TestFragment.onMove*****qqqqqqqqqq**********" + viewHolder.itemView.getLeft());
                 int fromPosition = viewHolder.getAdapterPosition();//得到拖动ViewHolder的position
                 int toPosition = target.getAdapterPosition();//得到目标ViewHolder的position

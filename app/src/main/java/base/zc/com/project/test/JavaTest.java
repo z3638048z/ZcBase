@@ -9,6 +9,11 @@ import java.util.TreeMap;
 
 public class JavaTest {
 
+    public void TTT(String aa){
+        System.out.println("JavaTest***" + aa);
+    }
+
+
     public static void main(String[] args){
 
         TreeNode node16 = new TreeNode(16, null, null);
