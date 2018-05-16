@@ -83,7 +83,10 @@ android {
     }
 
     productFlavors {
-        floruit_base {}
+        xiaomi {}
+        _360 {}
+        vivo {}
+        oppo {}
         productFlavors.all { flavor ->
             flavor.manifestPlaceholders = [MMC_CHANNEL_VALUE: name]
         }
