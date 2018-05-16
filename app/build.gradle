@@ -96,6 +96,9 @@ android {
                 outputFileName = releaseApkName
             }
 
+            outputFileName = str + ".apk";
+
+
         }
     }
 
