@@ -96,7 +96,7 @@ android {
                 outputFileName = releaseApkName
             }
 
-            outputFileName = is_jenkins ? "yes_" : "no_" + str + "_" + choice + ".apk";
+            outputFileName = (is_jenkins ? "yes_" : "no_") + str + "_" + choice + ".apk";
 
 
         }
